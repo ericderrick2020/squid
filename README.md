@@ -31,9 +31,51 @@ Whether it's helping with homework, reinforcing concepts, or tracking progress, 
 
 ---
 
-## 📦 Installation (Development)
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/squidai.git
-   cd squidai
+squidai/
+│
+├── main.py                   # FastAPI application entry point
+├── .env                      # Environment variables (not committed)
+├── requirements.txt          # Python dependencies
+├── Dockerfile                # Containerization config
+├── docker-compose.yml        # For multi-container setup (DB, API, etc.)
+├── README.md                 # Project overview
+├── LICENSE                   # MIT License
+│
+├── api/                      # API route handlers
+│   ├── v1/                   
+│   │   ├── students.py       # Student auth & profile routes
+│   │   ├── lessons.py        # Lesson & recommendation endpoints
+│   │   ├── questions.py      # AI question-answering routes
+│   │   └── analytics.py      # Progress & performance tracking
+│   └── __init__.py
+│
+├── ai_engine/                # AI and NLP logic
+│   ├── tutor.py              # Intelligent tutoring logic
+│   ├── nlp_processor.py      # Text understanding & response generation
+│   ├── model_loader.py       # Loads ML models (e.g., Hugging Face)
+│   └── adapters/             # Integrations with OpenAI, Llama, etc.
+│
+├── models/                   # Database models (SQLAlchemy)
+│   ├── student.py            # Student data model
+│   ├── lesson.py             # Lesson and content schema
+│   ├── interaction.py        # Logs user-AI interactions
+│   └── __init__.py
+│
+├── schemas/                  # Pydantic models for request/response
+│   ├── student.py
+│   ├── lesson.py
+│   └── question.py
+│
+├── database/                 # DB config and session management
+│   ├── session.py            # Database connection setup
+│   └── init_db.py            # Initialize sample data (optional)
+│
+├── utils/                    # Helper functions
+│   ├── auth.py               # JWT authentication logic
+│   ├── logger.py             # Logging setup
+│   └── helpers.py            # General utilities
+│
+└── tests/                    # Unit and integration tests
+    ├── test_students.py
+    ├── test_lessons.py
+    └── conftest.py
